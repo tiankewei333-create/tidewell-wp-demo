@@ -1,0 +1,14 @@
+{
+  "name": "tidewell-wp-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "WordPress + Elementor demo site for a local cleaning company, runnable with WordPress Playground.",
+  "scripts": {
+    "dev": "wp-playground-cli server --port=9400 --blueprint=blueprint.local.json --mount-dir ./wp-content/themes/tidewell /wordpress/wp-content/themes/tidewell --mount-dir ./wp-content/plugins/tidewell-site /wordpress/wp-content/plugins/tidewell-site"
+  },
+  "license": "GPL-2.0-or-later",
+  "devDependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
+    "@wp-playground/cli": "^3.1.56"
+  }
+}

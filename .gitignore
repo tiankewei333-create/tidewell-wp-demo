@@ -1,0 +1,4 @@
+node_modules/
+wp-content/plugins/tidewell-site/dev/
+docs/lighthouse/*.json
+.playground/

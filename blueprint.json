@@ -1,0 +1,70 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"meta": {
+		"title": "Tidewell Cleaning Co. — WordPress + Elementor demo",
+		"description": "Local service business site: Elementor pages, WooCommerce packages, Contact Form 7 booking, portfolio with filterable gallery, Yoast SEO and a performance mode switch.",
+		"author": "tiankewei333-create"
+	},
+	"landingPage": "/",
+	"preferredVersions": {
+		"php": "8.3",
+		"wp": "latest"
+	},
+	"features": {
+		"networking": true
+	},
+	"login": true,
+	"steps": [
+		{
+			"step": "installTheme",
+			"themeData": { "resource": "wordpress.org/themes", "slug": "hello-elementor" },
+			"options": { "activate": false }
+		},
+		{
+			"step": "installPlugin",
+			"pluginData": { "resource": "wordpress.org/plugins", "slug": "elementor" }
+		},
+		{
+			"step": "installPlugin",
+			"pluginData": { "resource": "wordpress.org/plugins", "slug": "woocommerce" }
+		},
+		{
+			"step": "installPlugin",
+			"pluginData": { "resource": "wordpress.org/plugins", "slug": "contact-form-7" }
+		},
+		{
+			"step": "installPlugin",
+			"pluginData": { "resource": "wordpress.org/plugins", "slug": "flamingo" }
+		},
+		{
+			"step": "installPlugin",
+			"pluginData": { "resource": "wordpress.org/plugins", "slug": "wordpress-seo" }
+		},
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "git:directory",
+				"url": "https://github.com/tiankewei333-create/tidewell-wp-demo",
+				"ref": "main",
+				"refType": "branch",
+				"path": "wp-content/plugins/tidewell-site"
+			},
+			"options": { "activate": true, "targetFolderName": "tidewell-site" }
+		},
+		{
+			"step": "installTheme",
+			"themeData": {
+				"resource": "git:directory",
+				"url": "https://github.com/tiankewei333-create/tidewell-wp-demo",
+				"ref": "main",
+				"refType": "branch",
+				"path": "wp-content/themes/tidewell"
+			},
+			"options": { "activate": true, "targetFolderName": "tidewell" }
+		},
+		{
+			"step": "runPHP",
+			"code": "<?php require '/wordpress/wp-load.php'; tidewell_setup();"
+		}
+	]
+}
